@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VK-Rechner</title>
+    <script>
+        function c() {
+            var e = document.getElementById("addedValueFactor").value, t = document.getElementById("VAT").value,
+                n = document.getElementById("purchasePrice").value;
+            n = n.replace(",", "."), e = e.replace(",", "."), t = t.replace(",", ".");
+            try {
+                var d = (Math.round(n * e * t * 100) / 100).toString();
+                -1 === d.indexOf(".") ? d += ",00 €" : d = d.length - d.indexOf(".") == 2 ? d.replace(".", ",") + "0 €" : d.replace(".", ",") + " €", document.getElementById("result").innerHTML = d, document.getElementById("purchasePrice").select()
+            } catch (e) {
+                document.getElementById("result").innerHTML = e.message
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.addEventListener("keyup", function (e) {
+                13 === e.keyCode && document.getElementById("myBtn").click()
+            })
+        });
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="col-25">
+                <label for="purchasePrice">Einkaufspreis (EK)</label>
+            </div>
+            <div class="col-75">
+                <input id="purchasePrice" type="text" pattern="^[0-9]+(,[0-9]{0,2})*$" placeholder="Format [00,00]"
+                       inputmode="numeric">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="addedValueFactor">+ Veredelungsfaktor</label>
+            </div>
+            <div class="col-75">
+                <input id="addedValueFactor" type="text" pattern="^[1-9](,[0-9]{1,2})*$"
+                       placeholder="Format [0,00]" inputmode="numeric" value="1,60">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="VAT">+ MwSt.</label>
+            </div>
+            <div class="col-75">
+                <input id="VAT" type="text" pattern="^[1-9](,[0-9]{1,2})*$" placeholder="Format [0,00]"
+                       inputmode="numeric"
+                       value="1,14">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="result">Verkaufspreis (VK)</label>
+            </div>
+            <div class="col-75">
+                <div id="result"></div>
+            </div>
+        </div>
+        <div class="row">
+            <input onclick="c()" id="myBtn" type="button" value="Enter">
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    font-family:    -apple-system,      /* Safari for OS X and iOS (San Francisco) */
+                    BlinkMacSystemFont, /* Chrome < 56 for OS X (San Francisco) */
+                    "Segoe UI",         /* Windows */
+                    Roboto,             /* Android*/
+                    "Helvetica Neue",   /* Basic web fallback */
+                    Arial, sans-serif;
+    font-size: 1.08em;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=button] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 45px;
+    margin-top: 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=button]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 500px;
+}
+
+.col-25 {
+    float: left;
+    width: 60%;
+    margin-top: 24px;
+}
+
+.col-75 {
+    float: left;
+    width: 40%;
+    margin-top: 24px;
+}
+
+.row:nth-last-child(2) {
+    font-weight: bold;
+}
+
+#result {
+    padding: 12px;
+    text-decoration: underline;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 500px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+    * {
+        font-size: 1em;
+    }
+    .col-25, .col-75, .container, input[type=submit] {
+        margin-top: 0;
+    }
+    .container{
+        width: 100%;
+    }
+    input[type=text], label, #result{
+        padding-bottom: 6px;
+        padding-top: 6px;
+    }
+    input[type=button] {
+        padding: 8px 40px;
+        margin-top: 12px;
+    }
+}
