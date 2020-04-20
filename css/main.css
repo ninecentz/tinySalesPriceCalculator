@@ -83,7 +83,7 @@ input[type=button]:hover {
     input[type=text], label, #result{
         padding-bottom: 6px;
         padding-top: 6px;
-		margin-bottom: 12px;
+		margin-bottom: 24px;
     }
     input[type=button] {
         padding: 8px 40px;
