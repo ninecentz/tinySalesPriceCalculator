@@ -76,17 +76,8 @@ input[type=button]:hover {
 	*{
 		font-size: 1.15em;
 	}
-    .col-25, .col-75, .container, input[type=submit] {
+    .container {
         margin-top: 0;
 		width: 100%;
-    }
-    input[type=text], label, #result{
-        padding-bottom: 6px;
-        padding-top: 6px;
-		margin-bottom: 24px;
-    }
-    input[type=button] {
-        padding: 8px 40px;
-        margin-top: 12px;
     }
 }
